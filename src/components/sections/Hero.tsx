@@ -42,10 +42,22 @@ export const Hero = () => {
         <img
           src="/images/hero_new_cinematic.jpg"
           alt="Luxury car detailing"
-          className="w-full h-full object-cover object-[70%_center] md:object-[80%_center] lg:object-center opacity-40 brightness-75 contrast-125"
+          className="w-full h-full object-cover object-[70%_center] md:object-[80%_center] lg:object-center opacity-100 brightness-[108%] contrast-[102%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg from-50% to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg"></div>
+        {/* Left overlay to keep text ultra-clean, fading smoothly before the car body */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to right, #050505 0%, #050505 36%, rgba(5, 5, 5, 0.75) 46%, rgba(5, 5, 5, 0.18) 58%, rgba(5, 5, 5, 0) 72%)'
+          }}
+        />
+        {/* Subtle bottom vignette to blend with stats/divider */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to top, #050505 0%, rgba(5, 5, 5, 0.5) 10%, rgba(5, 5, 5, 0) 25%)'
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10 pt-20">
